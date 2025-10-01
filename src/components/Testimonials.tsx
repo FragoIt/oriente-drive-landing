@@ -4,20 +4,20 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Carlos Ramírez",
-    vehicle: "Toyota Hilux 2020",
-    text: "Excelente servicio, muy profesionales y honestos. Mi camioneta quedó como nueva después del cambio de amortiguadores.",
+    vehicle: "Toyota Hilux 2018",
+    text: "Profesionales y honestos. Mi Hilux quedó como nueva.",
     rating: 5
   },
   {
     name: "María González",
-    vehicle: "Chevrolet Spark 2019",
-    text: "Las promociones son increíbles y el trabajo impecable. Recomiendo totalmente este taller.",
+    vehicle: "Chevrolet Spark 2020",
+    text: "Excelente servicio y precios justos. 100% recomendados.",
     rating: 5
   },
   {
-    name: "Juan Pérez",
-    vehicle: "Mazda CX-5 2021",
-    text: "Atención rápida por WhatsApp y servicio de calidad. Mis frenos quedaron perfectos.",
+    name: "Jorge Martínez",
+    vehicle: "Mazda CX-5 2019",
+    text: "Rápidos y expertos. Mi carro va perfecto ahora.",
     rating: 5
   }
 ];
