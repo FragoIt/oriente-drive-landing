@@ -7,14 +7,58 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "clamp(1rem, 5vw, 2rem)",
+        sm: "clamp(1rem, 5vw, 2rem)",
+        lg: "clamp(1rem, 5vw, 2rem)",
+        xl: "clamp(1rem, 5vw, 2rem)",
+        "2xl": "clamp(1rem, 5vw, 2rem)",
+      },
       screens: {
-        "2xl": "1400px",
+        sm: "640px",
+        md: "768px", 
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1280px", // Max container width
       },
     },
     extend: {
+      transitionDuration: {
+        400: '400ms',
+        600: '600ms',
+      },
+      transitionTimingFunction: {
+        standard: 'cubic-bezier(0.4,0,0.2,1)',
+      },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      fontSize: {
+        // Hierarchical typography system
+        'h1': ['clamp(3.5rem, 8vw, 4.5rem)', { lineHeight: '1.1', fontWeight: '900' }], // 56-72px
+        'h2': ['clamp(2.5rem, 6vw, 3rem)', { lineHeight: '1.2', fontWeight: '700' }], // 40-48px
+        'h3': ['clamp(1.75rem, 4vw, 2rem)', { lineHeight: '1.3', fontWeight: '600' }], // 28-32px
+        'body': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }], // 18px
+        'small': ['0.875rem', { lineHeight: '1.5', fontWeight: '400' }], // 14px
+      },
+      fontWeight: {
+        'normal': '400',
+        'semibold': '600', 
+        'bold': '700',
+        'black': '900',
+      },
+      spacing: {
+        // 8px multiples system
+        '2': '0.5rem',   // 8px
+        '4': '1rem',     // 16px
+        '6': '1.5rem',   // 24px
+        '8': '2rem',     // 32px
+        '12': '3rem',    // 48px
+        '16': '4rem',    // 64px - mobile section padding
+        '24': '6rem',    // 96px - desktop section padding
+        '32': '8rem',    // 128px
+        '40': '10rem',   // 160px
+        '48': '12rem',   // 192px
       },
       colors: {
         border: "hsl(var(--border))",
@@ -22,9 +66,14 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "primary-dark": {
+          DEFAULT: "hsl(var(--primary-dark))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -41,6 +90,10 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

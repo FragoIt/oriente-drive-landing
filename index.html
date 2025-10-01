@@ -6,22 +6,53 @@
     <title>Amortiguadores de Oriente | Taller Automotriz en Rionegro</title>
     <meta name="description" content="Especialistas en suspensiones, frenos y mantenimiento automotriz en Rionegro. Scanner computarizado, alineación, balanceo y más. ¡Cotiza por WhatsApp!" />
     <meta name="author" content="Amortiguadores de Oriente" />
+  <meta name="theme-color" content="#0a1630" />
+  <link rel="icon" type="image/x-icon" href="/logo_empresa.jpeg" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <!-- TODO: Colocar logo optimizado (512x512) en /public/logo-512.png y añadir: <link rel="icon" type="image/png" sizes="512x512" href="/logo-512.png" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
     <meta property="og:title" content="Amortiguadores de Oriente | Taller Automotriz en Rionegro" />
     <meta property="og:description" content="Especialistas en suspensiones, frenos y mantenimiento automotriz. Promociones exclusivas cada mes." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Amortiguadores de Oriente",
+        "description": "Especialistas en suspensiones, frenos, alineación, balanceo y diagnóstico automotriz en Rionegro.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rionegro",
+          "addressRegion": "Antioquia",
+          "addressCountry": "CO"
+        },
+        "areaServed": "Rionegro, Antioquia",
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }],
+        "url": "https://example.com",
+        "telephone": "+57 3182819825",
+        "priceRange": "$$"
+      }
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
+    <link rel="preload" as="image" href="/src/assets/hero-automotive.jpg" />
+    <!-- If video is critical above the fold you could consider preload=metadata via HTML video tag instead -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

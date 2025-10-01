@@ -1,36 +1,47 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
     name: "Carlos Ramírez",
     vehicle: "Toyota Hilux 2018",
-    text: "Profesionales y honestos. Mi Hilux quedó como nueva.",
-    rating: 5
+    text: "Profesionales y honestos. Mi Hilux quedó como nueva después del cambio de amortiguadores.",
+    rating: 5,
+    initial: "C"
   },
   {
     name: "María González",
     vehicle: "Chevrolet Spark 2020",
-    text: "Excelente servicio y precios justos. 100% recomendados.",
-    rating: 5
+    text: "Excelente servicio y precios justos. El diagnóstico fue preciso y la reparación perfecta.",
+    rating: 5,
+    initial: "M"
   },
   {
     name: "Jorge Martínez",
     vehicle: "Mazda CX-5 2019",
-    text: "Rápidos y expertos. Mi carro va perfecto ahora.",
-    rating: 5
+    text: "Rápidos y expertos. Mi carro va perfecto ahora, se siente como nuevo en la carretera.",
+    rating: 5,
+    initial: "J"
   }
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="testimonios" className="relative section-padding overflow-hidden">
+      {/* Dark gradient background matching hero */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0"
+          style={{ background: 'var(--gradient-hero)' }}
+        />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAtMy4zMTQgMi42ODYtNiA2LTZzNiAyLjY4NiA2IDYtMi42ODYgNi02IDYtNi0yLjY4Ni02LTZ6TTE2IDM2YzAtMy4zMTQgMi42ODYtNiA2LTZzNiAyLjY4NiA2IDYtMi42ODYgNi02IDYtNi0yLjY4Ni02LTZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30" />
+      </div>
+
+      <div className="relative z-10 container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-h2 text-white mb-6 leading-tight">
             Lo que dicen nuestros clientes
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-h3 text-white/90 max-w-3xl mx-auto font-normal">
             La satisfacción de nuestros clientes es nuestra mejor carta de presentación
           </p>
         </div>
@@ -39,25 +50,51 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index}
-              className="relative hover:shadow-xl transition-all duration-300 animate-fade-in-up"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="relative group transition-all duration-400 ease-standard hover:-translate-y-2 hover:scale-[1.02] animate-fade-in-up border-0"
+              style={{ 
+                animationDelay: `${index * 150}ms`,
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.4)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+              }}
             >
-              <CardContent className="p-6">
-                <Quote className="h-8 w-8 text-primary/30 mb-4" />
-                
+              <CardContent className="p-6 h-full flex flex-col">
+                {/* 5 Star Rating */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    <span key={i} className="text-amber-400 text-xl">⭐</span>
                   ))}
                 </div>
                 
-                <p className="text-muted-foreground mb-6 italic">
+                {/* Testimonial Text */}
+                <p className="text-white/90 mb-6 italic text-lg leading-relaxed flex-grow">
                   "{testimonial.text}"
                 </p>
                 
-                <div className="border-t border-border pt-4">
-                  <p className="font-bold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.vehicle}</p>
+                {/* Customer Info */}
+                <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                  {/* Avatar with Initial */}
+                  <div 
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                    style={{ background: 'var(--gradient-cta)' }}
+                  >
+                    {testimonial.initial}
+                  </div>
+                  
+                  {/* Name and Vehicle */}
+                  <div>
+                    <p className="font-bold text-white text-lg">{testimonial.name}</p>
+                    <p className="text-white/70 text-sm">{testimonial.vehicle}</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

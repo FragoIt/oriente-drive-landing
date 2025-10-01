@@ -3,11 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Clock, Phone, Navigation } from "lucide-react";
 
 const Location = () => {
-  const address = "Rionegro, Antioquia, Colombia";
-  const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Rionegro+Antioquia+Colombia";
+  const address = "Carrera 52 #50-15, Centro, Rionegro, Antioquia";
+  const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Carrera+52+50-15+Rionegro+Antioquia+Colombia";
   
   return (
-    <section className="py-20 bg-background">
+    <section id="contacto" className="section-padding bg-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -22,7 +22,7 @@ const Location = () => {
           {/* Map */}
           <div className="rounded-xl overflow-hidden shadow-lg animate-fade-in-up h-[400px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63441.38219476429!2d-75.42349245!3d6.155287599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46829e6a0f5a3f%3A0x3b9b0b0b0b0b0b0b!2sRionegro%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15858.848717726464!2d-75.37663168715821!3d6.15528758637845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e468298b7be52f7%3A0x4b5b4b4b4b4b4b4b!2sCarrera%2052%2C%20Rionegro%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1696181234567"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -65,8 +65,9 @@ const Location = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-2">Horarios</h3>
-                    <p className="text-muted-foreground">Lunes a Sábado</p>
-                    <p className="text-foreground font-semibold">8:00 AM - 6:00 PM</p>
+                    <p className="text-muted-foreground">Lunes a Viernes</p>
+                    <p className="text-foreground font-semibold">7:30 AM - 6:00 PM</p>
+                    <p className="text-muted-foreground">Sábados: 8:00 AM - 4:00 PM</p>
                     <p className="text-sm text-muted-foreground mt-2">Domingos cerrado</p>
                   </div>
                 </div>
@@ -84,7 +85,7 @@ const Location = () => {
                     <p className="text-muted-foreground mb-2">Escríbenos por WhatsApp</p>
                     <Button 
                       className="bg-[#25D366] hover:bg-[#20BA5A] text-white"
-                      onClick={() => window.open('https://wa.me/573001234567', '_blank')}
+                      onClick={() => window.open('https://wa.me/573182819825', '_blank')}
                     >
                       <Phone className="h-4 w-4 mr-2" />
                       Contactar ahora
